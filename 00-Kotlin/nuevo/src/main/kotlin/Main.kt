@@ -61,5 +61,9 @@ fun calcularSueldo(
     tasa:double=12.2,
     bonoEspecial:Double?=null,
 ): Double{
-    if(bonoEspecial)
+    if(bonoEspecial == null){
+        return sueldo * (100/tasa)
+    }else{
+        return sueldo * (100/tasa) + bonoEspecial
+    }
 }
