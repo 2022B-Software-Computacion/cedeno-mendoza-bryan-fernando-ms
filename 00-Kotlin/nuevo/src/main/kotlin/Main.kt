@@ -5,12 +5,12 @@ fun main(){
     //Tipos de variables
 
     //Immutables(No se reasignan)
-    val inmutables: string = "Adrian";
+    val inmutables: String = "Adrian";
     //inmutable="Vicente";//No se puede re asignar
 
 
     //Mutables(Re asignar)
-    var mutable:string ="Viente"
+    var mutable:String = "Viente"
     mutable="adrian"
 
     //Es recomendable usar val> var
@@ -18,8 +18,8 @@ fun main(){
 
     //Sintaxis Duck Typing
     val ejemploVariable = "Ejemplo"
-    val edadEjemplo: int=12
-    ejemploVaribles.trim()
+    val edadEjemplo: Int = 12
+    ejemploVariable.trim()
 
     //Variables Primitivas
     val nombre: String = "Fernando Cedeño"
@@ -36,7 +36,7 @@ fun main(){
 
     }
 
-    val estadoCivilWhen='S'
+    val estadoCivilWhen="S"
     when (estadoCivilWhen){
         ("S")->{
 
@@ -150,21 +150,15 @@ fun main(){
             }
     println(respuestaReduce) //78
 
-
-
-
-
-
-
 }
 
-fun imprimirNombre(nombre:String): unit{
-    println("Nombre:${nombre}")
+fun imprimirNombre(nombre:String): Unit{
+    return println("Nombre:${nombre}")
 }
 
 fun calcularSueldo(
     sueldo:Double,
-    tasa:double=12.2,
+    tasa:Double=12.2,
     bonoEspecial:Double?=null,
 ): Double{
     if(bonoEspecial == null){
@@ -176,7 +170,7 @@ fun calcularSueldo(
 
 
 
-Clases Abstractas
+//Clases Abstractas
 abstract class NumerosJava{
     protected val numeroUno: Int
     private val numeroDos: Int
