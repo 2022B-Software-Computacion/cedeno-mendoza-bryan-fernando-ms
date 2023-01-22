@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hola_mundo">Hola Mundo LandScape English</string>
+    <color name="background">#AF1F56</color>
+    <color name="text">#37FF33</color>
+</resources>
