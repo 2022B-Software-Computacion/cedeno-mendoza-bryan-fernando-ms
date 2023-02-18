@@ -35,11 +35,14 @@ android {
         viewBinding true
     }
 }
-
+def lifecycle_version = "2.4.0"
 dependencies {
 
     // FIREBASE:
     implementation platform('com.google.firebase:firebase-bom:31.1.0')
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
