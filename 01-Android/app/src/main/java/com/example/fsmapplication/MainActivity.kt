@@ -14,6 +14,12 @@ class MainActivity : AppCompatActivity() {
             .setOnClickListener{        //Alhacer click ir hacia la actividad ACicloVida
                 irActividad(ACicloVida::class.java)
             }
+
+        val botonListView= findViewById<Button>(R.id.btn_ir_list_view) //Reconozco el Id del componente
+        botonListView
+            .setOnClickListener{        //Alhacer click ir hacia la actividad ListView
+                irActividad(BListView::class.java)
+            }
     }
     fun irActividad(            //Funcion ir Actividad //Intends
         clase: Class<*>
