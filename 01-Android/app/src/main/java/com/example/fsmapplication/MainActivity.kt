@@ -53,6 +53,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //Base de Datos SQlite
+        EBaseDeDatos.tablaEntrenador= ESqliteHelperEntrenador(this)
+
+
+
         //IR a Ciclo Vida
         val botonCicloVida =
             findViewById<Button>(R.id.btn_ciclo_vida) //Reconozco el Id del componente
@@ -83,6 +88,16 @@ class MainActivity : AppCompatActivity() {
             .setOnClickListener {
                 abrirActividadConParametros(CIntentExplicitoParametros::class.java)
             }
+
+        //Boton ir Metodos Crud
+
+
+        val botonSqlite=findViewById<Button>(R.id.btn_ir_crud)
+        botonSqlite
+            .setOnClickListener {
+                irActividad(ECrudEntrenador::class.java)
+            }
+
     }
     fun irActividad(            //Funcion ir Actividad //Intends
         clase: Class<*>
