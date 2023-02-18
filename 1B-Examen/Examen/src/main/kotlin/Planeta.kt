@@ -28,7 +28,7 @@ class Planeta {
         return "$id,$nombre,$superficie,$habitable,$fechaDescubrimiento,$edad"
     }
 
-    fun convertirObjeto(planeta:String){
+    fun convertirObjeto(planeta:String){ //convierte el texto en un objeto
         val yourArray: List<String> = planeta.split(",")
         this.id=yourArray[0].toInt()
         this.nombre=yourArray[1]

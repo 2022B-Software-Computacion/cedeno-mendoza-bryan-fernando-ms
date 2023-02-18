@@ -30,7 +30,7 @@ class Sistemas {
         this.fechaDescubrimiento=fecha
         this.listaPlanetas=listaP
     }
-    fun convertirArrayText():String{
+    fun convertirArrayText():String{  // convertir el array de planetas a texto
         var respuestaForEach=""
             this.listaPlanetas
             .forEach{
@@ -40,12 +40,12 @@ class Sistemas {
         return respuestaForEach
     }
 
-    fun convertirText():String{
+    fun convertirText():String{     //convertir  el objeto en texto
         var planetas=convertirArrayText()
         return "$id,$nombre,$habitable,$temperatura,$distancia,$masaSolar,$fechaDescubrimiento$planetas"
     }
 
-    fun convertirObjeto(sistema:String){
+    fun convertirObjeto(sistema:String){    //convertir  el texto en el objeto
         val yourArray: List<String> = sistema.split(",")
         this.id=yourArray[0].toInt()
         this.nombre=yourArray[1]
@@ -63,7 +63,7 @@ class Sistemas {
         return "Sistemas(id=$id, nombre='$nombre', habitable=$habitable, temperatura=$temperatura, distancia=$distancia, masaSolar=$masaSolar, fechaDescubrimiento=$fechaDescubrimiento, listaPlanetas=$listaPlanetas)"
     }
 
-    fun mostrarDetallePlanetas(listaPlanetasDetallados:ArrayList<Planeta>): String{
+    fun mostrarDetallePlanetas(listaPlanetasDetallados:ArrayList<Planeta>): String{  //mostrar el detalle del planeta
         var detalle:String=""
         var planeta=Planeta()
         listaPlanetas.forEach{
