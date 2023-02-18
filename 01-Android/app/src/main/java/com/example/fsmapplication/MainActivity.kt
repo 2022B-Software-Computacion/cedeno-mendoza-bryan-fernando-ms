@@ -50,7 +50,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -83,8 +82,6 @@ class MainActivity : AppCompatActivity() {
         botonIntent
             .setOnClickListener {
                 abrirActividadConParametros(CIntentExplicitoParametros::class.java)
-
-
             }
     }
     fun irActividad(            //Funcion ir Actividad //Intends
@@ -94,15 +91,16 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-
     fun abrirActividadConParametros(
         clase:Class<*>,
     ){//Para enviar parametros a un intent lo realizamos mediante el metodo put extra de ese intent
         val intentExplicito = Intent(this, clase)
         //enviar parámetros ((solamente variables primitivas) a nuestra actividad
         intentExplicito.putExtra("nombre", "Fernando")
-        intentExplicito.putExtra("apellido","Llano")
+        intentExplicito.putExtra("apellido","Cedeño")
         intentExplicito.putExtra("edad",25)
+        //con el entrenador Parcelable podemos enviar datos de actividadesy no solo primitivas
+        intentExplicito.putExtra("entrenadorPrincipal", BEntrenador(5,"jorge","Paleta"))
         contenidoIntentExplicito.launch(intentExplicito)
     }
 }

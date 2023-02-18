@@ -4,14 +4,14 @@ class BBaseDatosMemoria {
     companion object{
         val arregloBEntrenador = arrayListOf<BEntrenador>()
         init{
-            arregloBEntrenador.add(BEntrenador("Fernando","a@a.com"))
+            arregloBEntrenador.add(BEntrenador(1,"Fernando","a@a.com"))
             arregloBEntrenador
                 .add(
-                    BEntrenador("Cedeno","b@b.com")
+                    BEntrenador(2,"Cedeno","b@b.com")
                 )
             arregloBEntrenador
                 .add(
-                    BEntrenador("Mendoza","c@c.com")
+                    BEntrenador(3,"Mendoza","c@c.com")
                 )
         }
     }
