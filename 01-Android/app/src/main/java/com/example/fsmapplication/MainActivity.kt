@@ -90,12 +90,16 @@ class MainActivity : AppCompatActivity() {
             }
 
         //Boton ir Metodos Crud
-
-
         val botonSqlite=findViewById<Button>(R.id.btn_ir_crud)
         botonSqlite
             .setOnClickListener {
                 irActividad(ECrudEntrenador::class.java)
+            }
+        //Boton  ir a recycler View
+        val botonRView= findViewById<Button>(R.id.btn_recycler_view)
+        botonRView
+            .setOnClickListener {
+                irActividad(GRecyclerView::class.java)
             }
 
     }

@@ -9,8 +9,8 @@
         android:id="@+id/tv_likes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="176dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="80dp"
         android:text="Likes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,10 +19,10 @@
         android:id="@+id/tv_nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="16dp"
         android:text="Nombre"
         app:layout_constraintEnd_toStartOf="@+id/tv_cedula"
-        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,8 +30,8 @@
         android:id="@+id/tv_cedula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="144dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="56dp"
         android:text="Cedula"
         app:layout_constraintEnd_toStartOf="@+id/tv_likes"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,7 +40,7 @@
         android:id="@+id/btn_dar_like"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="32dp"
         android:text="DAR LIKE"
         app:layout_constraintEnd_toEndOf="@+id/tv_cedula"
         app:layout_constraintStart_toStartOf="@+id/tv_cedula"

@@ -72,9 +72,19 @@
         android:text="Metodos CRUD"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.653" />
+        app:layout_constraintVertical_bias="0.54" />
+
+    <Button
+        android:id="@+id/btn_recycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:text="R. View"
+        app:layout_constraintEnd_toEndOf="@+id/btn_ir_crud"
+        app:layout_constraintStart_toStartOf="@+id/btn_ir_crud"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ir_crud" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
