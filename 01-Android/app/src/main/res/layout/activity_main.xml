@@ -75,16 +75,16 @@
         app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.54" />
+        app:layout_constraintVertical_bias="0.486" />
 
     <Button
         android:id="@+id/btn_recycler_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="20dp"
         android:text="R. View"
         app:layout_constraintEnd_toEndOf="@+id/btn_ir_crud"
-        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="@+id/btn_ir_crud"
         app:layout_constraintTop_toBottomOf="@+id/btn_ir_crud" />
 
@@ -98,5 +98,16 @@
         app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="@+id/btn_recycler_view"
         app:layout_constraintTop_toBottomOf="@+id/btn_recycler_view" />
+
+    <Button
+        android:id="@+id/btn_intent_firebase_ui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Firebase UI"
+        app:layout_constraintEnd_toEndOf="@+id/btn_google_maps"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="@+id/btn_google_maps"
+        app:layout_constraintTop_toBottomOf="@+id/btn_google_maps" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
