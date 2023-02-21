@@ -9,7 +9,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Charts"
-        android:gravity="center"/>
+        android:background="#D8B3B3"
+        android:gravity="center"
+        android:text="Charts" />
 
 </FrameLayout>

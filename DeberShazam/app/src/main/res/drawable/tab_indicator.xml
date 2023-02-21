@@ -3,16 +3,16 @@
     <item android:state_selected="true">
         <shape android:shape="oval">
             <solid android:color="@color/purple_200"/>
-            <size android:width="12dp"
-                android:height="12dp"/>
+            <size android:width="5dp"
+                android:height="5dp"/>
         </shape>
     </item>
     <item>
         <shape android:shape="oval">
-            <stroke android:width="2dp"
-                android:color="@color/purple_200"/>
-            <size android:width="12dp"
-                android:height="12dp"/>
+            <stroke android:width="3dp"
+                android:color="@color/black"/>
+            <size android:width="5dp"
+                android:height="5dp"/>
         </shape>
     </item>
 </selector>
