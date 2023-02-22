@@ -1,32 +1,23 @@
 package com.example.cloneshazam
 
+
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.Nullable
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Charts.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Charts : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private lateinit var recyclerView: RecyclerView
+    private val parentList = ArrayList<ParentItemD>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
@@ -37,23 +28,54 @@ class Charts : Fragment() {
         return inflater.inflate(R.layout.fragment_charts, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Charts.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Charts().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+
+    override fun onViewCreated(view: View, @Nullable savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        recyclerView = view.findViewById(R.id.parentRecyclerView) //Cambio
+        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext()) //Cambio
+
+        addDataToList()
+        val adapter = ParentAdapter(parentList)
+        recyclerView.adapter = adapter
     }
+    private fun addDataToList() {
+
+        val childItems1 = ArrayList<ChildItemD>()
+        childItems1.add(ChildItemD("Flower","Miley Cyrus",R.drawable.mc_flowers))
+        childItems1.add(ChildItemD("The Astronaut","JIM",R.drawable.jin_astronaut))
+        childItems1.add(ChildItemD("Calm Down","Rena",R.drawable.rem_calmdown))
+        parentList.add(ParentItemD("Global Chart", childItems1))
+
+        val childItems2 = ArrayList<ChildItemD>()
+        childItems2.add(ChildItemD("Flower","Miley Cyrus",R.drawable.mc_flowers))
+        childItems2.add(ChildItemD("The Astronaut","JIM",R.drawable.jin_astronaut))
+        childItems2.add(ChildItemD("Calm Down","Rena",R.drawable.rem_calmdown))
+        parentList.add(ParentItemD("Global Chart", childItems2))
+
+
+        val childItems3 = ArrayList<ChildItemD>()
+        childItems3.add(ChildItemD("Flower","Miley Cyrus",R.drawable.mc_flowers))
+        childItems3.add(ChildItemD("The Astronaut","JIM",R.drawable.jin_astronaut))
+        childItems3.add(ChildItemD("Calm Down","Rena",R.drawable.rem_calmdown))
+        parentList.add(ParentItemD("Global Chart", childItems3))
+
+        val childItems4 = ArrayList<ChildItemD>()
+        childItems4.add(ChildItemD("Flower","Miley Cyrus",R.drawable.mc_flowers))
+        childItems4.add(ChildItemD("The Astronaut","JIM",R.drawable.jin_astronaut))
+        childItems4.add(ChildItemD("Calm Down","Rena",R.drawable.rem_calmdown))
+        parentList.add(ParentItemD("Global Chart", childItems4))
+
+        val childItems5 = ArrayList<ChildItemD>()
+        childItems5.add(ChildItemD("Flower","Miley Cyrus",R.drawable.mc_flowers))
+        childItems5.add(ChildItemD("The Astronaut","JIM",R.drawable.jin_astronaut))
+        childItems5.add(ChildItemD("Calm Down","Rena",R.drawable.rem_calmdown))
+        parentList.add(ParentItemD("Global Chart", childItems5))
+
+    }
+
+
+
+
 }
