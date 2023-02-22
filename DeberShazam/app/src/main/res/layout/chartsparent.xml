@@ -27,6 +27,7 @@
                 android:id="@+id/tv_parentTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
                 android:text="Section"
                 android:textColor="#B3B3B3"
                 android:textSize="16sp"
@@ -37,11 +38,12 @@
 
             <Button
                 android:id="@+id/btn_seeAll"
-                android:layout_width="81dp"
-                android:layout_height="35dp"
-                android:layout_marginEnd="4dp"
+                android:layout_width="92dp"
+                android:layout_height="33dp"
+                android:layout_marginEnd="2dp"
                 android:backgroundTint="#242724"
                 android:text="See all"
+                android:textAlignment="textEnd"
                 android:textColor="#1562B6"
                 android:textSize="10sp"
                 app:layout_constraintBottom_toBottomOf="parent"

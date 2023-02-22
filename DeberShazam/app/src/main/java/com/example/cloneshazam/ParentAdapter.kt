@@ -10,15 +10,29 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ParentAdapter(private val parentList: List<ParentItemD>) :
     RecyclerView.Adapter<ParentAdapter.ParentViewHolder>() {
+    private val VIEW_TYPE_FIRST_ITEM = 0
+    private val VIEW_TYPE_NORMAL_ITEM = 1
+
 
     inner class ParentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleTv: TextView = itemView.findViewById(R.id.tv_parentTitle)
         val childRecyclerView: RecyclerView = itemView.findViewById(R.id.langRecyclerView)
     }
 
+    override fun getItemViewType(position: Int): Int {
+        return if (position == 0) {
+            VIEW_TYPE_FIRST_ITEM
+        } else {
+            VIEW_TYPE_NORMAL_ITEM
+        }
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ParentViewHolder {
+
+
         val view = LayoutInflater.from(parent.context).inflate(R.layout.chartsparent, parent, false)
         return ParentViewHolder(view)
+
     }
 
     override fun onBindViewHolder(holder: ParentViewHolder, position: Int) {
