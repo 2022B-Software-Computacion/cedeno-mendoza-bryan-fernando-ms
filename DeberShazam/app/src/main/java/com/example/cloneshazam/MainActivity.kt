@@ -19,9 +19,9 @@ class MainActivity : AppCompatActivity() {
         tabLayout=findViewById(R.id.tab_layout)
         viewPager2=findViewById(R.id.view_pager2)
         adapter = FragmentPageAdapter(supportFragmentManager,lifecycle)
-        tabLayout.addTab(tabLayout.newTab().setText("Charts"))
-        tabLayout.addTab(tabLayout.newTab().setText("Search"))
         tabLayout.addTab(tabLayout.newTab().setText("Library"))
+        tabLayout.addTab(tabLayout.newTab().setText("Search"))
+        tabLayout.addTab(tabLayout.newTab().setText("Charts"))
 
 
         viewPager2.adapter=adapter
