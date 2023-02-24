@@ -47,19 +47,16 @@ class ParentAdapter(private val parentList: List<ParentItemD>) :
         if (position==0){
             holder.titleTv.visibility=View.GONE
             holder.seeallButton.visibility=View.GONE
-
             holder.constLayout.apply {
                 // setear el nuevo foreground del botón
                 foreground = ContextCompat.getDrawable(context, R.drawable.mapa)
-
-
             }
             holder.childRecyclerView.setHasFixedSize(true)
         }else{
             val parentItem = parentList[position]
             holder.titleTv.text = parentItem.title
             holder.childRecyclerView.setHasFixedSize(true)
-            holder.childRecyclerView.layoutManager = GridLayoutManager(holder.itemView.context, 3)
+            holder.childRecyclerView.layoutManager = GridLayoutManager(holder.itemView.context,3 )
             val adapter = ChildAdapter(parentItem.mList)
             holder.childRecyclerView.adapter = adapter
         }

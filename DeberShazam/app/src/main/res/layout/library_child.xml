@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="#414741"
+    app:cardElevation="5dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="175dp"
+        android:layout_height="245dp"
+        android:layout_marginLeft="5dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/childCardLibrary"
+            android:layout_width="178dp"
+            android:layout_height="152dp"
+
+            android:backgroundTint="#414741"
+
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/iv_child_library_logo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/cl_players" />
+
+            <ImageView
+                android:id="@+id/iv_menudots"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="135dp"
+                android:src="@drawable/ic_baseline_more_vert_24" />
+
+            <ImageView
+                android:id="@+id/iv_playvid"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="47dp"
+                android:layout_marginVertical="47dp"
+
+
+                android:src="@drawable/ic_baseline_play_circle_filled_24" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_childTitle_Library"
+            android:layout_width="82dp"
+            android:layout_height="14dp"
+            android:layout_marginVertical="5dp"
+            android:layout_marginTop="8dp"
+            android:text="Song"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.172"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/childCardLibrary" />
+
+        <TextView
+            android:id="@+id/tv_child_Library_singer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="TextView"
+            android:textColor="#B3B3B3"
+            app:layout_constraintEnd_toEndOf="@+id/tv_childTitle_Library"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_childTitle_Library"
+            app:layout_constraintTop_toBottomOf="@+id/tv_childTitle_Library" />
+
+        <Button
+            android:id="@+id/btn_apple"
+            android:layout_width="64dp"
+            android:layout_height="29dp"
+            android:layout_marginBottom="1dp"
+            android:backgroundTint="#616161"
+            android:text="Music"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.144"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_child_Library_singer"
+            app:layout_constraintVertical_bias="0.764" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -41,6 +41,7 @@ class Charts : Fragment() {
         recyclerView.adapter = adapter
     }
     private fun addDataToList() {
+        parentList.add(ParentItemD("Mapa", ArrayList<ChildItemD>()))
 
         val childItems1 = ArrayList<ChildItemD>()
         childItems1.add(ChildItemD("Flower","Miley Cyrus",R.drawable.mc_flowers))
@@ -52,26 +53,26 @@ class Charts : Fragment() {
         childItems2.add(ChildItemD("Flower","Miley Cyrus",R.drawable.mc_flowers))
         childItems2.add(ChildItemD("The Astronaut","JIM",R.drawable.jin_astronaut))
         childItems2.add(ChildItemD("Calm Down","Rena",R.drawable.rem_calmdown))
-        parentList.add(ParentItemD("Global Chart", childItems2))
+        parentList.add(ParentItemD("New York City Chart", childItems2))
 
 
         val childItems3 = ArrayList<ChildItemD>()
         childItems3.add(ChildItemD("Flower","Miley Cyrus",R.drawable.mc_flowers))
         childItems3.add(ChildItemD("The Astronaut","JIM",R.drawable.jin_astronaut))
         childItems3.add(ChildItemD("Calm Down","Rena",R.drawable.rem_calmdown))
-        parentList.add(ParentItemD("Global Chart", childItems3))
+        parentList.add(ParentItemD("Los Angeles Chart", childItems3))
 
         val childItems4 = ArrayList<ChildItemD>()
         childItems4.add(ChildItemD("Flower","Miley Cyrus",R.drawable.mc_flowers))
         childItems4.add(ChildItemD("The Astronaut","JIM",R.drawable.jin_astronaut))
         childItems4.add(ChildItemD("Calm Down","Rena",R.drawable.rem_calmdown))
-        parentList.add(ParentItemD("Global Chart", childItems4))
+        parentList.add(ParentItemD("Paris Chart", childItems4))
 
         val childItems5 = ArrayList<ChildItemD>()
         childItems5.add(ChildItemD("Flower","Miley Cyrus",R.drawable.mc_flowers))
         childItems5.add(ChildItemD("The Astronaut","JIM",R.drawable.jin_astronaut))
         childItems5.add(ChildItemD("Calm Down","Rena",R.drawable.rem_calmdown))
-        parentList.add(ParentItemD("Global Chart", childItems5))
+        parentList.add(ParentItemD("London Chart", childItems5))
 
     }
 

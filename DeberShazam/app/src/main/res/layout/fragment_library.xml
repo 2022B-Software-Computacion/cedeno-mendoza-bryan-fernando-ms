@@ -1,18 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5E7180"
+    android:background="#1F2223"
     tools:context=".Library">
 
     <!-- TODO: Update blank fragment layout -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="419dp"
+        android:layout_height="34dp"
+        android:background="#374849"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="105dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="Library"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <TextView
-        android:layout_width="225dp"
-        android:layout_height="174dp"
-        android:gravity="center"
-        android:text="Library"
-        tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="265dp" />
+        android:id="@+id/tv_configuracions"
+        android:layout_width="330dp"
+        android:layout_height="42dp"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="128dp"
+        android:padding="10dp"
+        android:text="Recent Shazams"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_heard_song"
+        android:layout_width="414dp"
+        android:layout_height="540dp"
+        android:layout_below="@id/tv_configuracions"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_configuracions"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <!--app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
