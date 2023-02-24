@@ -44,15 +44,15 @@ class Charts : Fragment() {
         parentList.add(ParentItemD("Mapa", ArrayList<ChildItemD>()))
 
         val childItems1 = ArrayList<ChildItemD>()
-        childItems1.add(ChildItemD("Flower","Miley Cyrus",R.drawable.mc_flowers))
-        childItems1.add(ChildItemD("The Astronaut","JIM",R.drawable.jin_astronaut))
+        childItems1.add(ChildItemD("Kill Bill","SZA",R.drawable.sza_killbill))
+        childItems1.add(ChildItemD("Miss you","Oliver Tree",R.drawable.ot_missyou))
         childItems1.add(ChildItemD("Calm Down","Rena",R.drawable.rem_calmdown))
         parentList.add(ParentItemD("Global Chart", childItems1))
 
         val childItems2 = ArrayList<ChildItemD>()
-        childItems2.add(ChildItemD("Flower","Miley Cyrus",R.drawable.mc_flowers))
-        childItems2.add(ChildItemD("The Astronaut","JIM",R.drawable.jin_astronaut))
-        childItems2.add(ChildItemD("Calm Down","Rena",R.drawable.rem_calmdown))
+        childItems2.add(ChildItemD("Lift me up","Rihana",R.drawable.rh_liftmeup))
+        childItems2.add(ChildItemD("Bloody Mary","Lady Gaga",R.drawable.lg_bloodymarry))
+        childItems2.add(ChildItemD("Miss you","Oliver Tree",R.drawable.ot_missyou))
         parentList.add(ParentItemD("New York City Chart", childItems2))
 
 
@@ -63,15 +63,15 @@ class Charts : Fragment() {
         parentList.add(ParentItemD("Los Angeles Chart", childItems3))
 
         val childItems4 = ArrayList<ChildItemD>()
-        childItems4.add(ChildItemD("Flower","Miley Cyrus",R.drawable.mc_flowers))
-        childItems4.add(ChildItemD("The Astronaut","JIM",R.drawable.jin_astronaut))
-        childItems4.add(ChildItemD("Calm Down","Rena",R.drawable.rem_calmdown))
+        childItems4.add(ChildItemD("Unholy","Sam Smith",R.drawable.ss_unholy))
+        childItems4.add(ChildItemD("Creeping","Metro boomin",R.drawable.mb_creepin))
+        childItems4.add(ChildItemD("Mocking bird","Eminen",R.drawable.em_mockingbird))
         parentList.add(ParentItemD("Paris Chart", childItems4))
 
         val childItems5 = ArrayList<ChildItemD>()
         childItems5.add(ChildItemD("Flower","Miley Cyrus",R.drawable.mc_flowers))
         childItems5.add(ChildItemD("The Astronaut","JIM",R.drawable.jin_astronaut))
-        childItems5.add(ChildItemD("Calm Down","Rena",R.drawable.rem_calmdown))
+        childItems5.add(ChildItemD("Bloody Mary","Lady Gaga",R.drawable.lg_bloodymarry))
         parentList.add(ParentItemD("London Chart", childItems5))
 
     }

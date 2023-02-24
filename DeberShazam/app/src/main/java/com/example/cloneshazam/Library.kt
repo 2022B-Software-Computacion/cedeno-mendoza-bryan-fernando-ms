@@ -52,15 +52,17 @@ class Library : Fragment() {
     }
     private fun addDataToList() {
 
-
-        heardSongList.add(ChildItemD("Flower","Miley Cyrus",R.drawable.mc_flowers))
-        heardSongList.add(ChildItemD("The Astronaut","JIM",R.drawable.jin_astronaut))
+        heardSongList.add(ChildItemD("Amor Plastique","Videoclub",R.drawable.vc_amourp))
+        heardSongList.add(ChildItemD("Unholy","Sam Smith",R.drawable.ss_unholy))
+        heardSongList.add(ChildItemD("Miss you","Oliver Tree",R.drawable.ot_missyou))
+        heardSongList.add(ChildItemD("Calm Down","Rena",R.drawable.rem_calmdown))
         heardSongList.add(ChildItemD("Creeping","Metro boomin",R.drawable.mb_creepin))
-        heardSongList.add(ChildItemD("Calm Down","Rema",R.drawable.rem_calmdown))
+        heardSongList.add(ChildItemD("Flower","Miley Cyrus",R.drawable.mc_flowers))
         heardSongList.add(ChildItemD("Kill Bill","SZA",R.drawable.sza_killbill))
         heardSongList.add(ChildItemD("Bloody Mary","Lady Gaga",R.drawable.lg_bloodymarry))
-        heardSongList.add(ChildItemD("Miss you","Oliver Tree",R.drawable.ot_missyou))
-        heardSongList.add(ChildItemD("Unholy","Sam Smith",R.drawable.ss_unholy))
+        heardSongList.add(ChildItemD("Calm Down","Rema",R.drawable.rem_calmdown))
+
+
 
 
 
