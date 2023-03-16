@@ -1,15 +1,20 @@
 package com.example.fsmapplication
 
-import android.app.DownloadManager.Query
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
 import com.example.vaesapplication.JCitiesDto
+import com.google.android.gms.tasks.Task
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QueryDocumentSnapshot
+import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import java.util.*
+import kotlin.collections.ArrayList
 
 class JFirebaseFirestore : AppCompatActivity() {
     var query: Query?=null // consulta desde firestore
@@ -26,10 +31,218 @@ class JFirebaseFirestore : AppCompatActivity() {
         )
         listView.adapter = adaptador //le ponemos el adaptador als list view
         adaptador.notifyDataSetChanged() //guardamos cambios
-
+    //Boton datos de prueba
         val botonDatosPrueba = findViewById<Button>(R.id.btn_fs_datos_prueba) //traemos el boton de datos de prueba
         botonDatosPrueba.setOnClickListener { crearDatosPrueba() }
+    //Boton ordenar por id
+        val botonOrderBy = findViewById<Button>(R.id.btn_fs_order_by)
+        botonOrderBy.setOnClickListener { consultarConOrderBy(adaptador) }
+    //Boton obtener solo un documento por id
+        val botonObtenerDocumento = findViewById<Button>(R.id.btn_fs_odoc)
+        botonObtenerDocumento.setOnClickListener {
+            consultarDocumento(adaptador)
+        }
+        // Boton con indice conpuesto
+        val botonFirebaseIndiceCompuesto = findViewById<Button>(R.id.btn_fs_ind_comp)
+        botonFirebaseIndiceCompuesto.setOnClickListener { consultaIndiceCompuesto(adaptador) }
+    //Crear datos ejemplo
+        val botonFirebaseCrear = findViewById<Button>(R.id.btn_fs_crear)
+        botonFirebaseCrear.setOnClickListener { crearDatosEjemplo() }
+    //Boton eliminar registro
+        val botonFirebaseEliminar = findViewById<Button>(R.id.btn_fs_eliminar)
+        botonFirebaseEliminar.setOnClickListener { eliminarRegistro() }
+    //Boton empezar a paginar.
+        val botonFirebaseEmpezarPaginar = findViewById<Button>(R.id.btn_fs_epaginar)
+        botonFirebaseEmpezarPaginar.setOnClickListener { query = null; consultarCiudades(adaptador); }
+        //Botton Paginar
+        val botonFirebasePaginar = findViewById<Button>(R.id.btn_fs_paginar)
+        botonFirebasePaginar.setOnClickListener {
+            consultarCiudades(adaptador)
+        }
+
+
     }
+
+    fun consultarCiudades(
+        adaptador: ArrayAdapter<JCitiesDto>
+    ){
+        val db = Firebase.firestore
+        val citiesRef = db.collection("cities").orderBy("population").limit(1)
+
+        var tarea: Task<QuerySnapshot>? = null
+        if (query == null) {
+            tarea = citiesRef.get() // 1era vez
+            limpiarArreglo()
+            adaptador.notifyDataSetChanged()
+        } else {
+            tarea = query!!.get() // consulta de la consulta anterior empezando en el nuevo documento
+        }
+
+        if (tarea != null) {
+            tarea
+                .addOnSuccessListener { documentSnapshots ->
+                    guardarQuery(documentSnapshots, citiesRef)
+                    for (ciudad in documentSnapshots) {
+                        anadirAArregloCiudad(arreglo, ciudad, adaptador)
+                    }
+                    adaptador.notifyDataSetChanged()
+                }
+                .addOnFailureListener {
+                    // si hay fallos
+                }
+        }
+    }
+    fun guardarQuery(documentSnapshots: QuerySnapshot, refCities: Query){
+        if (documentSnapshots.size() > 0) {
+            val ultimoDocumento = documentSnapshots.documents[documentSnapshots.size() - 1]
+            query = refCities
+                .startAfter(ultimoDocumento)
+        }
+    }
+
+
+    // [1,2,3,4,5,6,7]
+    // 4 primeros [1,2,3,4]
+    // [1,3,5,6,7,10,12]
+    // 4 primeros [1,3,5,6]
+    // [1,3,5,6,7,10,12]
+    // 4 primeros   X => [1,3,5,6] (cargar mas)
+    // 4 siguientes 6 =>  [7,10,12] (cargar mas)
+    // 4 primeros   12 => []
+
+    fun eliminarRegistro(){
+        val db = Firebase.firestore
+        val referenciaEjemploEstudiante = db
+            .collection("ejemplo")
+            .document("123456789")
+            .collection("estudiante")
+
+        referenciaEjemploEstudiante
+            .document("123456789")
+            .delete() // elimina
+            .addOnCompleteListener { /* Si todo salio bien*/ }
+            .addOnFailureListener { /* Si algo salio mal*/ }
+    }
+
+
+
+    fun crearDatosEjemplo(){
+        val db = Firebase.firestore
+        val referenciaEjemploEstudiante = db
+            .collection("ejemplo") // ejemplo/123456789/estudiante/....
+            .document("123456789")
+            .collection("estudiante")
+        val identificador = Date().time
+        val datosEstudiante = hashMapOf(
+            "nombre" to "Adrian",
+            "graduado" to false,
+            "promedio" to 14.00,
+            "direccion" to hashMapOf(
+                "direccion" to "Mitad del mundo",
+                "numeroCalle" to 1234
+            ),
+            "materias" to listOf("web", "moviles")
+        )
+
+        // Con identificador quemado
+        referenciaEjemploEstudiante
+            .document("123456789")
+            .set(datosEstudiante) // actualiza o crea
+            .addOnCompleteListener { /* Si todo salio bien*/ }
+            .addOnFailureListener { /* Si algo salio mal*/ }
+
+        // Con identificador generado en Date.time
+        referenciaEjemploEstudiante
+            .document(identificador.toString())
+            .set(datosEstudiante) // actualiza o crea
+            .addOnCompleteListener { /* Si todo salio bien*/ }
+            .addOnFailureListener { /* Si algo salio mal*/ }
+
+        // Sin identificador
+        referenciaEjemploEstudiante
+            .add(datosEstudiante) // crea
+            .addOnCompleteListener { /* Si todo salio bien*/ }
+            .addOnFailureListener { /* Si algo salio mal*/ }
+
+    }
+
+
+
+
+    fun consultaIndiceCompuesto(
+        adaptador: ArrayAdapter<JCitiesDto>
+    ){
+        val db = Firebase.firestore
+        val citiesRefUnico = db
+            .collection("cities")
+        limpiarArreglo()
+        citiesRefUnico
+            .whereEqualTo("capital", false)
+            .whereLessThanOrEqualTo("population", 4000000)
+            .orderBy("population", Query.Direction.DESCENDING)
+            .get()
+            .addOnSuccessListener {
+                for (ciudad in it) {
+                    anadirAArregloCiudad(arreglo, ciudad, adaptador)
+                }
+            }
+    }
+
+
+    fun consultarDocumento(
+        adaptador: ArrayAdapter<JCitiesDto>
+    ){
+        val db = Firebase.firestore
+        val citiesRefUnico = db
+            .collection("cities")
+        // /cities/BJ (1 documento)
+        // /cities/BG/hijo/1/nieto/1.1
+        citiesRefUnico
+            .document("BJ")
+//            .collection("hijo")
+//            .document("1")
+//            .collection("nieto")
+//            .document("1.1")
+            .get()
+            .addOnSuccessListener {
+                it.id // obtener el id de firestore
+                limpiarArreglo()
+                arreglo.add(
+                    JCitiesDto(
+                        it.data?.get("name") as String?,
+                        it.data?.get("state") as String?,
+                        it.data?.get("country") as String?,
+                        it.data?.get("capital") as Boolean?,
+                        it.data?.get("population") as Long?,
+                        it.data?.get("regions") as ArrayList<String>
+                    )
+                )
+                adaptador.notifyDataSetChanged()
+            }
+    }
+
+
+    fun consultarConOrderBy(
+        adaptador: ArrayAdapter<JCitiesDto>
+    ){
+        val db = Firebase.firestore //Accedemos a la base de datos y a su ves a la coleccion cities
+        val citiesRefUnico = db
+            .collection("cities")
+        limpiarArreglo()        //Limpiamos el arreglo
+        adaptador.notifyDataSetChanged()
+        citiesRefUnico
+            // NO USAMOS CON DOCUMENT xq en DOCUMENT nos devuelve 1
+            //  /cities => "population" ASCENDING
+            .orderBy("population", Query.Direction.ASCENDING)
+            .get() // obtenemos la peticion
+            .addOnSuccessListener {
+                for (ciudad in it) {
+                    ciudad.id
+                    anadirAArregloCiudad(arreglo, ciudad, adaptador)
+                }
+            }
+    }
+
 
     //Funciones de utilidad
     fun crearDatosPrueba(){
@@ -87,12 +300,14 @@ class JFirebaseFirestore : AppCompatActivity() {
         )
         cities.document("BJ").set(data5)
     }
+
     fun limpiarArreglo() { arreglo.clear() }
     fun anadirAArregloCiudad(
         arregloNuevo: ArrayList<JCitiesDto>,
         ciudad: QueryDocumentSnapshot,
         adaptador: ArrayAdapter<JCitiesDto>
     ) {
+
         ciudad.id
         val nuevaCiudad = JCitiesDto(
             ciudad.data.get("name") as String?,
