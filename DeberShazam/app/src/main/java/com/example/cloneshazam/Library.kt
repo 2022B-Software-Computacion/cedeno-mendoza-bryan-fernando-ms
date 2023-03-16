@@ -51,7 +51,6 @@ class Library : Fragment() {
         recyclerView.layoutManager = GridLayoutManager(recyclerView.context,2 )
     }
     private fun addDataToList() {
-
         heardSongList.add(ChildItemD("Amor Plastique","Videoclub",R.drawable.vc_amourp))
         heardSongList.add(ChildItemD("Unholy","Sam Smith",R.drawable.ss_unholy))
         heardSongList.add(ChildItemD("Miss you","Oliver Tree",R.drawable.ot_missyou))
@@ -61,10 +60,6 @@ class Library : Fragment() {
         heardSongList.add(ChildItemD("Kill Bill","SZA",R.drawable.sza_killbill))
         heardSongList.add(ChildItemD("Bloody Mary","Lady Gaga",R.drawable.lg_bloodymarry))
         heardSongList.add(ChildItemD("Calm Down","Rema",R.drawable.rem_calmdown))
-
-
-
-
 
     }
 }

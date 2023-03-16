@@ -30,5 +30,4 @@ class ChildAdapter(private val childList: List<ChildItemD>) :
     override fun getItemCount(): Int {
         return childList.size
     }
-
 }

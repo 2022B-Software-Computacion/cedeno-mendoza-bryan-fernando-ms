@@ -74,10 +74,5 @@ class IFirebaseUIAuth : AppCompatActivity() {
         btnLogin.visibility = View.VISIBLE
         FirebaseAuth.getInstance().signOut()
     }
-
-
-
-
-
-
+    
 }
