@@ -50,7 +50,7 @@ class SistemasPrincipal : AppCompatActivity() {
 
                         val idSistema = Sistemalist[position].id
                         Toast.makeText(this@SistemasPrincipal, "Id:   $idSistema", Toast.LENGTH_SHORT).show()
-                        val btnEditarSistema = findViewById<Button>(R.id.btnSistemaEdit)
+                        val btnEditarSistema = findViewById<Button>(R.id.btnPlanetaEdit)
                         btnEditarSistema.setOnClickListener {
                             sentDataToOtherActiity(ActualizarSistema::class.java, idSistema)
                         }

@@ -1,96 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActualizarSistema">
-
-    ]
+    tools:context=".ActualizarPlaneta">
 
     <EditText
-        android:id="@+id/etTemperaturaSistemaUpdate"
+        android:id="@+id/etEdadPlanetaUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:hint="Temperatura"
+        android:hint="Edad"
         android:inputType="numberDecimal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etMasaSolarSistemaUpdate" />
-
-    <EditText
-        android:id="@+id/etMasaSolarSistemaUpdate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:hint="Masa Solar"
-        android:inputType="numberDecimal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDistanciaSistemaUpdate" />
+        app:layout_constraintTop_toBottomOf="@+id/etSuperficiePlanetaUpdate" />
 
     <TextView
-        android:id="@+id/tvTitleActualizarSistema"
+        android:id="@+id/tvTitleActualizarPlaneta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="Actualizar Datos"
+        android:text="Actualizar Planeta"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etNombreSistemaUpdate"
+        android:id="@+id/etNombrePlanetaUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:hint="Nombre"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleActualizarSistema" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleActualizarPlaneta" />
 
     <EditText
-        android:id="@+id/etFechaDesSistemaUpdate"
+        android:id="@+id/etFechaDesPlanetaUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:hint="Fechas de Descubrimiento"
         android:inputType="date"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNombreSistemaUpdate" />
+        app:layout_constraintTop_toBottomOf="@+id/etNombrePlanetaUpdate" />
 
     <EditText
-        android:id="@+id/etDistanciaSistemaUpdate"
+        android:id="@+id/etSuperficiePlanetaUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:hint="Distancia"
+        android:hint="Superficie"
         android:inputType="numberDecimal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etFechaDesSistemaUpdate" />
+        app:layout_constraintTop_toBottomOf="@+id/etFechaDesPlanetaUpdate" />
 
     <EditText
-        android:id="@+id/etHabitableSistemaUpdate"
+        android:id="@+id/etHabitablePlanetaUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:hint="Habitable"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etTemperaturaSistemaUpdate" />
+        app:layout_constraintTop_toBottomOf="@+id/etEdadPlanetaUpdate" />
 
     <Button
-        android:id="@+id/btnSistemaUpdate"
+        android:id="@+id/btnActualizarPlaneta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:backgroundTint="#1738AC"
         android:text="Actualizar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.907"
+        app:layout_constraintHorizontal_bias="0.861"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

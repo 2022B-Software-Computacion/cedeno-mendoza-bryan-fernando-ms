@@ -17,14 +17,14 @@ class CrearSistema : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crear_sistema)
 
-        val etNombreSistema = findViewById<EditText>(R.id.etNombreSistema)
-        val etFechaDesSistema = findViewById<EditText>(R.id.etFechaDesSistema)
-        val etDistanciaSistema = findViewById<EditText>(R.id.etDistanciaSistema)
+        val etNombreSistema = findViewById<EditText>(R.id.etNombrePlaneta)
+        val etFechaDesSistema = findViewById<EditText>(R.id.etFechaDesPlaneta)
+        val etDistanciaSistema = findViewById<EditText>(R.id.etSuperficiePlaneta)
         val etMasaSolar = findViewById<EditText>(R.id.etMasaSolarSistema)
-        val etTemperatura = findViewById<EditText>(R.id.etTemperaturaSistema)
-        val etHabitable = findViewById<EditText>(R.id.etHabitableSistema)
+        val etTemperatura = findViewById<EditText>(R.id.etEdadPlaneta)
+        val etHabitable = findViewById<EditText>(R.id.etHabitablePlaneta)
 
-        val btnCrearSistema = findViewById<Button>(R.id.btnCrearSistema)
+        val btnCrearSistema = findViewById<Button>(R.id.btnCrearPlaneta)
         btnCrearSistema.setOnClickListener {
             if (etNombreSistema.text.isNotEmpty()
                 && etFechaDesSistema.text.isNotEmpty()

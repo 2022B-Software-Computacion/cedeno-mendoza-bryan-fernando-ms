@@ -16,11 +16,11 @@
             android:id="@+id/tvTitleEdad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Temperatura:"
+            android:text="Edad:"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitleMasaSolarContent" />
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleSuperficiePlanetaContent" />
 
         <TextView
             android:id="@+id/tvTitleEdadPlanetaContent"
@@ -33,7 +33,7 @@
             android:id="@+id/tvTitleNamePlaneta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sistema Planetario:"
+            android:text="Planeta:"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +68,7 @@
             android:id="@+id/tvTitleSuperficie"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Distancia:"
+            android:text="Superficie:"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -80,23 +80,6 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTitleSuperficie" />
-
-        <TextView
-            android:id="@+id/tvTitleMasaSolar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Masa Solar:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitleSuperficiePlanetaContent" />
-
-        <TextView
-            android:id="@+id/tvTitleMasaSolarContent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitleMasaSolar" />
 
         <TextView
             android:id="@+id/tvTitleHabitable"

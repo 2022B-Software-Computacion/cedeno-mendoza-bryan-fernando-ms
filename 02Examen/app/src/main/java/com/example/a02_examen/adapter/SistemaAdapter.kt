@@ -27,13 +27,13 @@ class SistemaAdapter(private val sistemaList: ArrayList<Sistema>) :
     }
 
     class SistemaViewHolder(itemView: View, listener: onItemClickListener) : RecyclerView.ViewHolder(itemView) {
-        val nombreSistema: TextView = itemView.findViewById(R.id.tvTitleNameSistemaContent)
-        val fechaDescubrimiento: TextView = itemView.findViewById(R.id.tvTitleFechaDescubrimientoContent)
-        val distancia: TextView = itemView.findViewById(R.id.tvTitleDistanciaContent)
+        val nombreSistema: TextView = itemView.findViewById(R.id.tvTitleNamePlanetaContent)
+        val fechaDescubrimiento: TextView = itemView.findViewById(R.id.tvTitleFechaDescubrimientoPlanetaContent)
+        val distancia: TextView = itemView.findViewById(R.id.tvTitleSuperficiePlanetaContent)
         val masaSolar: TextView = itemView.findViewById(R.id.tvTitleMasaSolarContent)
-        val temperatura: TextView = itemView.findViewById(R.id.tvTitleTemperaturaContent)
-        val habitable : TextView = itemView.findViewById(R.id.tvTitleHabitableContent)
-        val btnEliminarSistema : Button = itemView.findViewById(R.id.btnSistemaDelete)
+        val temperatura: TextView = itemView.findViewById(R.id.tvTitleEdadPlanetaContent)
+        val habitable : TextView = itemView.findViewById(R.id.tvTitleHabitablePlanetaContent)
+        val btnEliminarSistema : Button = itemView.findViewById(R.id.btnPlanetaDelete)
 
         init {
             itemView.setOnClickListener {

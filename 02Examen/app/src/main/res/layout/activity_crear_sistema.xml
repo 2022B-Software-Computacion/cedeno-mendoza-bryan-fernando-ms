@@ -7,10 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".CrearSistema">
 
-    ]
+
 
     <EditText
-        android:id="@+id/etTemperaturaSistema"
+        android:id="@+id/etEdadPlaneta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -27,10 +27,10 @@
         android:hint="Masa Solar"
         android:inputType="numberDecimal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDistanciaSistema" />
+        app:layout_constraintTop_toBottomOf="@+id/etSuperficiePlaneta" />
 
     <TextView
-        android:id="@+id/tvTitleCrearSistema"
+        android:id="@+id/tvTitleActualizarPlaneta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -38,57 +38,60 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.114"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etNombreSistema"
+        android:id="@+id/etNombrePlaneta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:hint="Nombre"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleCrearSistema" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleActualizarPlaneta" />
 
     <EditText
-        android:id="@+id/etFechaDesSistema"
+        android:id="@+id/etFechaDesPlaneta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:hint="Fechas de Descubrimiento"
         android:inputType="date"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNombreSistema" />
+        app:layout_constraintTop_toBottomOf="@+id/etNombrePlaneta" />
 
     <EditText
-        android:id="@+id/etDistanciaSistema"
+        android:id="@+id/etSuperficiePlaneta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:hint="Distancia"
         android:inputType="numberDecimal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etFechaDesSistema" />
+        app:layout_constraintTop_toBottomOf="@+id/etFechaDesPlaneta" />
 
     <EditText
-        android:id="@+id/etHabitableSistema"
+        android:id="@+id/etHabitablePlaneta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:hint="Habitable"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etTemperaturaSistema" />
+        app:layout_constraintTop_toBottomOf="@+id/etEdadPlaneta" />
 
     <Button
-        android:id="@+id/btnCrearSistema"
+        android:id="@+id/btnCrearPlaneta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#1738AC"
         android:text="Crear"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.904"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etHabitableSistema" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
